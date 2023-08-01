@@ -36,7 +36,7 @@ module.exports = {
 ```
 {
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll"
   }
 }
 ```
