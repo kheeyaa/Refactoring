@@ -1,3 +1,5 @@
+declare const Clock: any;
+
 export function printOwing(invoice) {
   let outstanding = 0;
 

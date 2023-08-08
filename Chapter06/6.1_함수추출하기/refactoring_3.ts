@@ -1,4 +1,5 @@
 // 예시: 지역 변수의 값을 변경할 때
+declare const Clock: any;
 export function printOwing(invoice) {
   printBanner();
 

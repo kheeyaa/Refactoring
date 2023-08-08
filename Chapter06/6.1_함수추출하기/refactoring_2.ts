@@ -1,4 +1,6 @@
 // 예시: 지역 변수를 사용할 때
+declare const Clock: any;
+
 export function printOwing(invoice) {
   let outstanding = 0;
 
