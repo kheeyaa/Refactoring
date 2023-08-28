@@ -1,28 +1,22 @@
 import * as example from "./example";
 import * as refactoring from "./refactoring";
 
-describe("7.5 클래스 추출하기", () => {
+describe("7.6 클래스 인라인하기", () => {
   test("리팩터링 전", () => {
-    const { Person } = example;
+    const { Shipment, TrankingInfomation } = example;
+    const aShipment = new Shipment(new TrankingInfomation("테스트 회사", 3));
+    aShipment.trackingInfomation.shippingCompany = "업데이트 테스트 회사";
 
-    const person = new Person({
-      name: "martin",
-      officeAreaCode: "02",
-      officeNumber: "1234",
-    });
-
-    expect(person.telephoneNumber).toBe("(02) 1234");
+    expect(aShipment.trackingInfomation.shippingCompany).toBe(
+      "업데이트 테스트 회사"
+    );
   });
 
   test("리팩터링 후", () => {
-    const { Person } = refactoring;
+    const { Shipment } = refactoring;
+    const aShipment = new Shipment("테스트 회사", 3);
+    aShipment.shippingCompany = "업데이트 테스트 회사";
 
-    const person = new Person({
-      name: "martin",
-      officeAreaCode: "02",
-      officeNumber: "1234",
-    });
-
-    expect(person.telephoneNumber).toBe("(02) 1234");
+    expect(aShipment.shippingCompany).toBe("업데이트 테스트 회사");
   });
 });

@@ -1,6 +1,6 @@
 export class TrankingInfomation {
   private _shippingCompany: string;
-  private _trackingNumber: string;
+  private _trackingNumber: number;
   constructor(shippingCompany, trackingNumber) {
     this._shippingCompany = shippingCompany;
     this._trackingNumber = trackingNumber;
@@ -41,4 +41,9 @@ export class Shipment {
   set trackingInfomation(arg) {
     this._trackingInfomation = arg;
   }
+}
+
+export function use() {
+  const aShipment = new Shipment(new TrankingInfomation("테스트 회사", 3));
+  aShipment.trackingInfomation.shippingCompany = "업데이트 테스트 회사";
 }

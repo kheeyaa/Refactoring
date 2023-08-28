@@ -1,6 +1,7 @@
-export class TrankingInfomation {
+export class Shipment {
   private _shippingCompany: string;
   private _trackingNumber: string;
+
   constructor(shippingCompany, trackingNumber) {
     this._shippingCompany = shippingCompany;
     this._trackingNumber = trackingNumber;
@@ -18,27 +19,12 @@ export class TrankingInfomation {
   set trackingNumber(arg) {
     this._trackingNumber = arg;
   }
-  get display() {
+  get trackingInfo() {
     return `${this.shippingCompany}: ${this.trackingNumber}`;
   }
 }
 
-export class Shipment {
-  private _trackingInfomation: TrankingInfomation;
-  private _shippingCompany: string;
-  constructor(trackingInfomation) {
-    this._trackingInfomation = trackingInfomation;
-  }
-
-  get trackingInfo() {
-    return this._trackingInfomation.display;
-  }
-
-  get trackingInfomation() {
-    return this._trackingInfomation;
-  }
-
-  set trackingInfomation(arg) {
-    this._trackingInfomation = arg;
-  }
+export function use() {
+  const aShipment = new Shipment("테스트 회사", 3);
+  aShipment.shippingCompany = "업데이트 테스트 회사";
 }
