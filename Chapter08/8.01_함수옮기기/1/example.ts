@@ -1,4 +1,5 @@
 // 예시: 중첩 함수를 최상위로 옮기기
+// 👍🏻 좋은 예제
 
 export function trackSummary(
   points: {
